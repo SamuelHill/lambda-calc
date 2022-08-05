@@ -1,0 +1,29 @@
+TRUE  := λxy.x
+FALSE := λxy.y
+
+NOT := λx.x(FALSE)(TRUE)
+AND := λxy:x(y)(x)
+OR  := λxy:x(x)(y)
+IFTHENELSE := λpab.pab
+ISZERO := λn.n (λx.FALSE) TRUE
+LEQ := λmn.ISZERO(SUB m n)
+
+ZERO  := λfx.x
+ONE   := λfx.fx
+TWO   := λfx.f(fx)
+THREE := λfx.f(f(fx))
+FOUR  := λfx.f(f(f(fx)))
+FIVE  := λfx.f(f(f(f(fx))))
+
+SUCC := λnfx.f(nfx)
+ADD := λxy.y(SUCC)(x)
+MUL := λxyf.y(x(f))
+POW := λbe.eb
+PRED := λnfx.n(λgh.h(gf))(λu.x)(λu.u)
+SUB := λmn.n PRED m
+
+CONS := λabs.sab
+CAR := λp.p TRUE
+CDR := λp.p FALSE
+NIL := λx.TRUE
+NULL := λp.p (λxy.FALSE)
